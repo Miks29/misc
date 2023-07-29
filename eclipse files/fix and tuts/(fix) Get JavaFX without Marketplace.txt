@@ -1,0 +1,28 @@
+
+1. Open Eclipse and click on Help. Choose Install a New Software from the list of options given in the drop down menu.
+
+2. Now, we need to add a repository, just click Add. 
+Type e(fx)clipse in the Name and type http://download.eclipse.org/efxclipse/updates-released/1.2.0/site/ in the location. 
+Press OK to proceed with this repository installation.
+
+3. Now, the name of all the components which will be installed from the location which we have just entered. 
+Click on Select All and click Next.
+
+4. A list has been shown which contains all the components which will be installed. 
+Just click Next to continue with the installation.
+
+5. Now, a software agreement has been shown. 
+Just select the radio box which says 
+I accept the terms and conditions and click finish.
+
+6. Now, the software is being installing to the eclipse. 
+Once the process gets over, it shows a pop-up window which asks to restart the eclipse. 
+Just click Restart Now and wait while restart process gets done.
+
+7. Done! , go to Window tab, Preference, JavaFX, SceneBuilder executable 
+and browse for the .exe file of Scenebuilder from your explorer, 
+usually found at C:\Users\[PC NAME]\AppData\Local\SceneBuilder\SceneBuilder.exe
+
+8. Apply and close, and you're done!
+
+9. You can now create .fxml file in your project and run it on SceneBuilder

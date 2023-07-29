@@ -1,0 +1,9 @@
+This is the problem with latest eclipse to prevent bloating. 
+So go to Eclipse-> Help--> Install New software 
+and --> type Oxygen in the "Work with" space 
+(or copy paste this "Oxygen - http://download.eclipse.org/releases/oxygen".)
+
+Now search "Market place client" in the second search box .
+
+You will get as below: General purpose tools-->Market place client. 
+Check that box and you are good to go.
