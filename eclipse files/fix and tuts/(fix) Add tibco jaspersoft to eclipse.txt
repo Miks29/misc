@@ -1,0 +1,15 @@
+Issue Description
+When attempting to install the Jaspersoft Studio as a plugin (community version only) for Eclipse, 
+either via Eclipse Marketplace or "Install software", there are occassional errors indicating that 
+update files or links are missing.   The problems are caused by intermittent hosting issues on sourceforge. 
+
+Resolution
+As a workaround you can try to install the plugin using the zipped solution we started providing in 6.3.1 version. 
+
+Download "full-site.zip" from the link above to a local drive, 
+then in Eclipse choose Help > Install New Software... > Add (button), 
+then hit Archive on the following pop-up and choose the full-site.zip which you downloaded, 
+then explore and follow prompts.
+
+source: 
+https://community.jaspersoft.com/wiki/installation-or-update-problems-eclipse-plugin-version-jaspersoft-studio
