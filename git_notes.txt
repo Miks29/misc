@@ -1,0 +1,27 @@
+New Project:
+git init
+git add * (to add all files / do 'git reset' if accidentally added/track unwanted files)
+git status
+git commit -s (do 'git revert' if want to revert/undo the commit)
+git push
+git status
+git log
+
+Cloning existing project to your local files:
+git clone (link/directory/etc.)
+ex.
+git clone \\192.168.1.226\productionRepository\
+
+git clone \\192.168.1.8\c$\aseverino\
+
+git clone https://github.com/Miks29/misc.git
+
+Update existing project from repo to your local files before pushing your loacl changes / check for files conflict:
+git fetch
+git status
+git add *
+git diff
+git commit -s
+git push
+git status
+git log
