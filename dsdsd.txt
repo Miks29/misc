@@ -2,4 +2,5 @@ aaaaaafaaa
 
 test (){
  test
+	Test = test new Test();
 }
