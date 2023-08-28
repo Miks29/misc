@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration
+PUBLIC '-//mybatis.org//DTD Config 3.0//EN'
+'http://mybatis.org/dtd/mybatis-3-config.dtd'>
+<configuration>
+	<properties
+		resource='ph/com/lserv/production/experiment/resources/jdbc.properties' />
+	<settings>
+		<setting name="cacheEnabled" value="true" />
+		<setting name="lazyLoadingEnabled" value="true" />
+		<setting name="proxyFactory" value="JAVASSIST" />
+		<setting name="logImpl" value="LOG4J2" />
+	</settings>
+	<typeAliases>
+		<typeAlias type='ph.com.lserv.production.experiment.model.Experiment'
+			alias='Experiment'></typeAlias>
+	</typeAliases>
+	<environments default='development'>
+		<environment id='development'>
+			<transactionManager type='JDBC' />
+			<dataSource type='POOLED'>
+				<property name='driver' value='${jdbc.driverClassName}' />
+				<property name='url'
+					value='jdbc:mysql://${jdbc.host}/${jdbc.schemaName}?useCompression=true' />
+				<property name='username' value='${jdbc.username}' />
+				<property name='password' value='${jdbc.password}' />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper
+			resource='ph/com/lserv/production/experiment/data/mapper/ExperimentMapper.xml' />
+	</mappers>
+</configuration>

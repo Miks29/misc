@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="ph.com.lserv.production.experiment.data.mapper.ExperimentMapper">
+	<cache eviction="FIFO" flushInterval="60000" size="512"
+		readOnly="true" />
+	<resultMap type='Experiment' id='ExperimentResult'>
+
+		<id property='primaryKey' column='prikey' />
+		<result property='timeFrom' column='time_from' />
+		<result property='timeTo' column='time_to' />
+		<result property='time_diff' column='time_diff' />
+	</resultMap>
+
+
+	<insert id='createData' parameterType='Experiment'
+		useGeneratedKeys='true' keyProperty='primaryKey'>
+		INSERT INTO
+		overtime_filing(time_from,time_to,time_diff)
+		VALUES(#{timeFrom},#{timeTo},#{timeDiff});
+	</insert>
+
+	<update id='updateData' parameterType='Experiment'>
+		UPDATE overtime_filing SET
+		time_from=#{timeFrom},time_to=#{timeTo},time_diff=#{timeDiff}
+		WHERE
+		prikey =
+		#{primaryKey}
+	</update>
+
+	<delete id='deleteData' parameterType='Experiment'>
+		DELETE FROM
+		overtime_filing
+		WHERE prikey=#{primaryKey}
+	</delete>
+
+	<select id="getAllData" resultMap="ExperimentResult">
+		SELECT * FROM overtime_filing;
+	</select>
+
+	<select id="getDataById" resultMap="ExperimentResult">
+		SELECT * FROM overtime_filing
+		where prikey= #{primaryKey};
+	</select>
+
+	<select id="getTimeDiffById" resultMap="ExperimentResult">
+		SELECT
+		TIMEDIFF(time_from, time_to) AS time_diff FROM overtime_filing WHERE
+		prikey = #{primaryKey};
+	</select>
+	
+	<select id="getOvertimeTypeSorted" resultType="java.lang.String">
+		SELECT ot_name FROM overtime_reference ORDER BY prikey ASC;
+	</select>
+
+</mapper>
